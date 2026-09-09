@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --black: #0a0a0a;
+  --bone: #EDE6D6;
+  --oxblood: #8B1E1E;
+  --bone-muted: #cfc6b4;
+  --oxblood-deep: #6b1616;
+  --surface: #121212;
+  --surface-2: #1a1a1a;
+  --border: #2a2a2a;
+}
+
+@theme inline {
+  --color-black: var(--black);
+  --color-bone: var(--bone);
+  --color-oxblood: var(--oxblood);
+  --color-bone-muted: var(--bone-muted);
+  --color-oxblood-deep: var(--oxblood-deep);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--bone);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--oxblood);
+  color: var(--bone);
+}
+
+.font-display {
+  font-family: var(--font-oswald), system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--oxblood);
+  color: var(--bone);
+  font-family: var(--font-oswald), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.875rem 1.75rem;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--oxblood-deep);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--bone);
+  color: var(--bone);
+  font-family: var(--font-oswald), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.875rem 1.75rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: var(--bone);
+  color: var(--black);
+}
+
+.eyebrow {
+  font-family: var(--font-oswald), system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+}
+
+.card-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+input::placeholder {
+  color: #7a7468;
+}
