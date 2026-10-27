@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { instructorPack } from "@/lib/training-products";
 
 export const metadata: Metadata = {
   title: "Training",
   description:
-    "Weeknight training calendar, drill cards, and makeup logs for volunteer fire departments. Free digital training aids from Same Standard Co.",
+    "Weeknight Instructor Pack ($49.99) plus free weeknight training calendar, drill cards, and makeup logs for volunteer fire departments. Paid instructor pack and free digital training aids from Same Standard Co.",
 };
 
 const downloads = [
@@ -50,6 +51,36 @@ export default function TrainingPage() {
             are built for that reality — structured weeknight calendars, drill
             cards you can run cold, and logs that keep the standard honest.
           </p>
+        </div>
+      </section>
+
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
+          <p className="eyebrow mb-3">Instructor pack</p>
+          <article className="card-surface flex flex-col gap-6 border-oxblood p-8 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-2xl">
+              <div className="flex flex-wrap items-center gap-3">
+                <h2 className="font-display text-3xl tracking-[0.06em]">
+                  {instructorPack.name}
+                </h2>
+                <span className="border border-oxblood px-2 py-0.5 font-display text-[10px] tracking-[0.16em] text-oxblood">
+                  Digital PDF
+                </span>
+              </div>
+              <p className="mt-3 font-display text-2xl tracking-[0.08em] text-oxblood">
+                {instructorPack.price}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-bone-muted">
+                {instructorPack.description}
+              </p>
+            </div>
+            <a
+              href={instructorPack.stripePaymentLink}
+              className="btn-primary shrink-0 self-start sm:self-center"
+            >
+              Buy now — {instructorPack.price}
+            </a>
+          </article>
         </div>
       </section>
 
